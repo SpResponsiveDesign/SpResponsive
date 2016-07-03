@@ -1,31 +1,58 @@
 // bower:scss
-// endbower
-
-body {
-  background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
-}
-
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-}
-
+@import "bower_components/font-awesome/scss/font-awesome.scss"; // endbower
+@import "bower_components/bulma/bulma.sass";
+$color_darkgray: #393939;
+$color_orange: #f19319;
+$color_green: #558540;
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
+}
+html {
+  font-size: 62.5%;
+}
+.columns {
+  margin: 0;
+  &:last-child {
+    margin: 0;
+  }
+}
+header {
+  //heading
+  .contactheading {
+    background: $color_darkgray;
+    .contactheading-wrapper {
+      color: white;
+      font-family: 'Lato';
+      p {
+        font-size: 1.4rem;
+        i,
+        span {
+          color: $color_orange;
+        }
+        i {
+          padding-right: 1.5rem;
+        }
+      }
+    }
+  }
+  .headermiddle {
+    background: white;
+    max-height: 9.5rem;
+    .headermiddle-wrapper {
+      .logo {}
+      .search {
+        input {
+          margin: 2.5rem 0rem 2.5rem 0rem; 
+          font-family: 'Lato';
+          padding: 1.2rem;
+          &::placeholder {
+            font-style: italic;
+          }
+        }
+      }
+    }
+  }
 }
