@@ -11,41 +11,94 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/lato/css/lato.css"/>
+    <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css"/>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    
+
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
   <body>
-    <!--[if lt IE 10]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Sass</li>
-        <li>Modernizr</li>
-        <li>jQuery</li>
-      </ul>
-    </div>
-    
+    <!--[if lt IE 10]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
+    <header>
+      <div class="contactheading">
+        <div class="contactheading-wrapper container">
+          <div class="columns">
+            <div class="column is-10 left">
+              <img src="images/ico/phone.png" alt="phone"/>
+              <p>
+                Besoin d’aide ? Contactez nous du lundi au vendredi de 8h30 à 18h :
+                <span>
+                  08 00 00 00 00</span>
+              </p>
+            </div>
+            <div class="column right">
+              <img src="images/ico/Location.png" alt="phone"/>
+              <p>
+                Nos Magasins
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="headermiddle">
+        <div class="headermiddle-wrapper container">
+          <div class="columns">
+            <div class="logo column is-3">
+              <img src="images/logo.png" alt="logoSportEtNature"/>
+            </div>
+            <div class="search column is-4">
+              <p class="control has-icon has-icon-right">
+                <input class="input" type="text" placeholder="Je cherche un produit, une marques, etc." value="">
+                <i class="fa"></i>
+              </p>
+            </div>
+            <div class="session column is-4 is-offset-1">
+              <div class="columns">
+                <div class="compte column">
+                  <img src="images/ico/user.png" alt="user"/>
+                  <p>
+                    Mon compte
+                  </p>
+                </div>
+                <div class="panier column">
+                  <img src="images/ico/ShoppingCart.png" alt="user"/>
+                  <p>
+                    Panier
+                  </p>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu"></div>
+    </header>
+    <section class="content"></section>
+    <footer></footer>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
+      (function(b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] = function() {
+          (b[l].q = b[l].q || []).push(arguments)
+        });
+        b[l].l =+ new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = 'https://www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+      }(window, document, 'script', 'ga'));
+      ga('create', 'UA-XXXXX-X');
+      ga('send', 'pageview');
     </script>
 
     <!-- build:js scripts/vendor.js -->
@@ -53,7 +106,7 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    
+
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->

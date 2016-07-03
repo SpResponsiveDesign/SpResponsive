@@ -1,31 +1,112 @@
 // bower:scss
-// endbower
-
-body {
-  background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
-}
-
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-}
-
+@import "bower_components/font-awesome/scss/font-awesome.scss"; // endbower
+@import "bower_components/bulma/bulma.sass";
+$color_darkgray: #393939;
+$color_orange: #f19319;
+$color_green: #558540;
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
+}
+html {
+  font-size: 62.5%;
+}
+
+header {
+  //heading
+  .contactheading {
+    .columns {
+      margin: 0;
+      .column {
+        padding: 0;
+      }
+    }
+    background: $color_darkgray;
+    height: 3.3rem;
+    .contactheading-wrapper {
+      color: white;
+      font-family: 'Lato';
+      img,
+      p {
+        display: inline-block;
+      }
+      span {
+        color: $color_orange;
+      }
+      img {
+        margin-top: 0.7rem;
+      }
+      p {
+        padding-left: 1.4rem;
+      }
+      .left {
+        img {
+          vertical-align: bottom;
+        }
+        p {
+          font-size: 1.2rem;
+        }
+      }
+      .right {
+        img {
+          vertical-align: sub;
+        }
+        p {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+  .headermiddle {
+    background: white;
+    height: 9.2rem;
+    .headermiddle-wrapper {
+      .logo {
+        margin-top: 0.7rem;
+      }
+      .search {
+        input {
+          box-shadow: none;
+          border: solid 1px #eee8e3;
+          border-radius: 0;
+          display: inherit;
+          height: 3.9rem;
+          margin: 2.6rem 0 0;
+          font-family: 'Lato';
+          padding: 1.2rem;
+          &::placeholder {
+            font-style: italic;
+          }
+        }
+        .control.has-icon > .fa {
+          background-image: url("../images/ico/Search.png");
+          top: 7px;
+          right: 10px;
+        }
+      }
+    }
+  }
+  .session{
+    .columns{
+      text-align: center;
+      .column{
+        margin-top: 3rem;
+        img,p{
+          display: inline-block;
+          vertical-align: middle;
+        }
+        p{
+          padding-left: 1.8rem;
+          font-family: "Lato";
+          font-size: 1.6rem;
+        }
+
+      }
+    }
+    .compte{
+      border-right: 1px solid #eee8e3;
+    }
+  }
 }
