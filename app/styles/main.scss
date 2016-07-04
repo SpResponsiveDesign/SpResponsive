@@ -1,6 +1,6 @@
 // bower:scss
-@import "bower_components/font-awesome/scss/font-awesome.scss"; // endbower
-@import "bower_components/bulma/bulma.sass";
+@import "bower_components/font-awesome/scss/font-awesome.scss";
+@import "bower_components/bourbon/app/assets/stylesheets/_bourbon.scss"; // endbower
 $color_darkgray: #393939;
 $color_orange: #f19319;
 $color_green: #558540;
@@ -13,21 +13,52 @@ $color_green: #558540;
 html {
   font-size: 62.5%;
 }
-
+.container {
+  width: 1044px;
+  margin-left: auto;
+  margin-right: auto;
+}
+//flexbox
+.rows {
+  @include display(flex);
+  &.center-center {
+    @include align-items(center);
+    @include justify-content(center);
+  }
+  &.center-start {
+    @include align-items(center);
+    @include justify-content(flex-start);
+  }
+  .column {
+    @include flex(1);
+    &.is-10 {
+      @include flex(none);
+      width: 83.33333%;
+    }
+    &.is-3 {
+      @include flex(none);
+      width: 25%;
+    }
+    &.is-4 {
+      @include flex(none);
+      width: 33.33333%;
+    }
+    &.is-offset-1 {
+      margin-left: 8.33333%;
+    }
+  }
+}
 header {
   //heading
   .contactheading {
-    .columns {
-      margin: 0;
-      .column {
-        padding: 0;
-      }
-    }
     background: $color_darkgray;
-    height: 3.3rem;
+    min-height: 3.3rem;
     .contactheading-wrapper {
       color: white;
       font-family: 'Lato';
+      .rows {
+        min-height: 3.3rem;
+      }
       img,
       p {
         display: inline-block;
@@ -35,15 +66,13 @@ header {
       span {
         color: $color_orange;
       }
-      img {
-        margin-top: 0.7rem;
-      }
       p {
         padding-left: 1.4rem;
+        margin: 0;
       }
       .left {
         img {
-          vertical-align: bottom;
+          vertical-align: middle;
         }
         p {
           font-size: 1.2rem;
@@ -51,7 +80,7 @@ header {
       }
       .right {
         img {
-          vertical-align: sub;
+          vertical-align: middle;
         }
         p {
           font-size: 1.4rem;
@@ -61,52 +90,90 @@ header {
   }
   .headermiddle {
     background: white;
-    height: 9.2rem;
+    min-height: 9.2rem;
     .headermiddle-wrapper {
-      .logo {
-        margin-top: 0.7rem;
+      .rows {
+        min-height: 9.2rem;
       }
+      .logo {}
       .search {
         input {
+          margin-left: 3.1rem;
+          display: inline-block;
+          width: 75%;
           box-shadow: none;
           border: solid 1px #eee8e3;
           border-radius: 0;
-          display: inherit;
-          height: 3.9rem;
-          margin: 2.6rem 0 0;
           font-family: 'Lato';
           padding: 1.2rem;
           &::placeholder {
             font-style: italic;
           }
         }
-        .control.has-icon > .fa {
+        .fa {
+          height: 25px;
+          width: 25px;
+          display: inline-block;
+          right: 36px;
+          top: 9px;
+          position: relative;
           background-image: url("../images/ico/Search.png");
-          top: 7px;
-          right: 10px;
         }
       }
     }
   }
-  .session{
-    .columns{
+  .session {
+    .rows {
       text-align: center;
-      .column{
-        margin-top: 3rem;
-        img,p{
+      .column {
+        img,
+        p {
           display: inline-block;
           vertical-align: middle;
         }
-        p{
+        p {
           padding-left: 1.8rem;
           font-family: "Lato";
           font-size: 1.6rem;
         }
-
       }
     }
-    .compte{
+    .compte {
       border-right: 1px solid #eee8e3;
+    }
+  }
+  .menu {
+    background: #f7f7f7;
+    min-height: 5.3rem;
+    .menu-wrapper {
+      .rows {
+        min-height: 5.3rem;
+        a {
+          color: #696969;
+          text-transform: uppercase;
+          font-family: "Lato";
+          font-weight: bold;
+          font-size: 1.6rem;
+          padding-right: 3.2rem;
+          text-decoration: none;
+          list-style: none;
+        }
+        a:nth-last-of-type(1) {
+          margin-left: auto;
+          background: $color_darkgray;
+          color: $color_orange;
+          padding-bottom: 1.7rem;
+          padding-top: 1.7rem;
+          padding-left: 1.4rem;;
+          img{
+            padding-right: 0.9rem;
+          }
+          li,img{
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+      }
     }
   }
 }
