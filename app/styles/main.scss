@@ -51,6 +51,7 @@ html {
       @include flex(none);
       width: 41.66667%;
     }
+<<<<<<< HEAD
     &.is-6 {
       @include flex(none);
       width: 50%;
@@ -59,6 +60,8 @@ html {
       @include flex(none);
       width: 58.33333%;
     }
+=======
+>>>>>>> romain
     &.is-8 {
       @include flex(none);
       width: 66.66667%;
@@ -280,11 +283,14 @@ header {
         min-height: 34.4rem;
         .rows{
           min-height: 34.4rem;
+<<<<<<< HEAD
           .column:first-of-type{
             .columns{
               min-height: 34.4rem;
             }
           }
+=======
+>>>>>>> romain
         }
       }
     }
