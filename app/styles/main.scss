@@ -29,11 +29,15 @@ html {
     @include align-items(center);
     @include justify-content(flex-start);
   }
+  &.end-start {
+    @include align-items(flex-end);
+    @include justify-content(flex-start);
+  }
   .column {
     @include flex(1);
-    &.is-10 {
+    &.is-2 {
       @include flex(none);
-      width: 83.33333%;
+      width: 16.66667%;
     }
     &.is-3 {
       @include flex(none);
@@ -42,6 +46,52 @@ html {
     &.is-4 {
       @include flex(none);
       width: 33.33333%;
+    }
+    &.is-5 {
+      @include flex(none);
+      width: 41.66667%;
+    }
+    &.is-8 {
+      @include flex(none);
+      width: 66.66667%;
+    }
+    &.is-10 {
+      @include flex(none);
+      width: 83.33333%;
+    }
+    &.is-offset-1 {
+      margin-left: 8.33333%;
+    }
+  }
+}
+.columns {
+  @include display(flex);
+  @include flex-direction(column);
+  &.center-center {
+    @include align-items(center);
+    @include justify-content(center);
+  }
+  &.center-start {
+    @include align-items(center);
+    @include justify-content(flex-start);
+  }
+  &.end-start {
+    @include align-items(flex-end);
+    @include justify-content(flex-start);
+  }
+  .column {
+    @include flex(1);
+    &.is-3 {
+      @include flex(none);
+      width: 25%;
+    }
+    &.is-4 {
+      @include flex(none);
+      width: 33.33333%;
+    }
+    &.is-10 {
+      @include flex(none);
+      width: 83.33333%;
     }
     &.is-offset-1 {
       margin-left: 8.33333%;
@@ -145,6 +195,7 @@ header {
   .menu {
     background: #f7f7f7;
     min-height: 5.3rem;
+    box-shadow: inset 0 0.1rem 0 0 #eee8e3;
     .menu-wrapper {
       .rows {
         min-height: 5.3rem;
@@ -158,20 +209,69 @@ header {
           text-decoration: none;
           list-style: none;
         }
+        a:first-of-type {
+          li {
+            border-bottom: 0.5rem solid $color_green;
+            padding-bottom: 1.6rem;
+            padding-top: 2.2rem;
+          }
+        }
         a:nth-last-of-type(1) {
           margin-left: auto;
           background: $color_darkgray;
           color: $color_orange;
           padding-bottom: 1.7rem;
           padding-top: 1.7rem;
-          padding-left: 1.4rem;;
-          img{
+          padding-left: 1.4rem;
+          img {
             padding-right: 0.9rem;
           }
-          li,img{
+          img,
+          li {
             display: inline-block;
             vertical-align: middle;
           }
+        }
+      }
+    }
+  }
+}
+//content
+.content {
+  background: #e8ebeb;
+  padding-top: 2.7rem;
+  .product {
+    background: #ffffff;
+    min-height: 37.2rem;
+    .entete {
+      .rows {
+        min-height: 2.8rem;
+        margin: 0;
+      }
+      ul {
+        li {
+          list-style: none;
+          &::after {
+            padding-left: 0.3rem;
+            padding-right: 0.3rem;
+            content: ">";
+          }
+          &:last-child:after {
+            content: "";
+          }
+          a {
+            font-family: "Lato";
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+    .product-wrapper {
+      min-height: 34.4rem;
+      .left {
+        min-height: 34.4rem;
+        .rows{
+          min-height: 34.4rem;
         }
       }
     }
