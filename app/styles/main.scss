@@ -51,7 +51,6 @@ html {
       @include flex(none);
       width: 41.66667%;
     }
-<<<<<<< HEAD
     &.is-6 {
       @include flex(none);
       width: 50%;
@@ -60,8 +59,6 @@ html {
       @include flex(none);
       width: 58.33333%;
     }
-=======
->>>>>>> romain
     &.is-8 {
       @include flex(none);
       width: 66.66667%;
@@ -258,21 +255,28 @@ header {
       .rows {
         min-height: 2.8rem;
         margin: 0;
+        padding-left: 1rem;
       }
       ul {
         li {
           list-style: none;
-          &::after {
-            padding-left: 0.3rem;
-            padding-right: 0.3rem;
-            content: ">";
-          }
-          &:last-child:after {
-            content: "";
+          &:last-child {
+            a:after {
+              content: "";
+              padding-left: 0.3rem;
+              padding-right: 0.3rem;
+              text-decoration: none;
+            }
           }
           a {
             font-family: "Lato";
             font-size: 1.1rem;
+            &::after {
+              content: ">";
+              padding-left: 0.3rem;
+              padding-right: 0.3rem;
+              text-decoration: none;
+            }
           }
         }
       }
@@ -281,16 +285,96 @@ header {
       min-height: 34.4rem;
       .left {
         min-height: 34.4rem;
-        .rows{
+        .rows {
           min-height: 34.4rem;
-<<<<<<< HEAD
-          .column:first-of-type{
-            .columns{
-              min-height: 34.4rem;
+          .column:first-of-type {
+            padding-left: 2.2rem;
+            img {
+              padding: 0.4rem;
+              border: solid 1px #eee8e3;
             }
           }
-=======
->>>>>>> romain
+          .product__middle {
+            img {
+              margin-left: auto;
+              margin-right: auto;
+              display: block;
+            }
+          }
+          .column:last-of-type {
+            align-self: flex-start;
+            h2 {
+              font-family: "Lato";
+              font-size: 2rem;
+              font-weight: bold;
+              margin: 2rem 0 0;
+            }
+            .product__avis {
+              &:first-of-type {
+                padding-top: 3.2rem;
+                padding-bottom: 2.2rem;
+              }
+              &:last-of-type {
+                padding-bottom: 3.9rem;
+              }
+              span:first-of-type {
+                font-family: "Lato";
+                font-size: 1.4rem;
+                font-weight: bold;
+              }
+              span:last-of-type {
+                font-size: 1.2rem;
+                padding-right: 1rem;
+              }
+              a {
+                cursor: pointer;
+                font-size: 1.2rem;
+                color: $color_green;
+                text-decoration: underline;
+              }
+              i:first-of-type {
+                padding-left: 1.95rem;
+              }
+              i {
+                color: #f19319;
+              }
+              i:last-of-type {
+                color: #eee8e3;
+              }
+            }
+            p {
+              font-family: "Lato";
+              font-size: 1.2rem;
+              color: #62605e;
+              margin-top: 3rem;
+            }
+            .product__color {
+              img {
+                padding-right: 1.4rem;
+              }
+            }
+            .product__rs {
+              margin-top: 1.9rem;
+              padding-top: 1.1rem;
+              border-top: 1px solid #eee8e3;
+              img {
+                padding-left: 0.7rem;
+              }
+            }
+          }
+        }
+      }
+      .right {
+        .product__panier {
+          border: 1px solid #e8ebeb;
+          min-height: 31.5rem;
+          min-width: 24.1rem;
+          margin-right: 2.1rem;
+          align-self: flex-start;
+          .product__panier-wrapper {
+            padding: 1.4rem;
+            min-height: 31.5rem;
+          }
         }
       }
     }
