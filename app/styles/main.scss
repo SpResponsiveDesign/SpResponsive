@@ -51,7 +51,6 @@ html {
       @include flex(none);
       width: 41.66667%;
     }
-<<<<<<< HEAD
     &.is-6 {
       @include flex(none);
       width: 50%;
@@ -60,8 +59,6 @@ html {
       @include flex(none);
       width: 58.33333%;
     }
-=======
->>>>>>> romain
     &.is-8 {
       @include flex(none);
       width: 66.66667%;
@@ -258,21 +255,28 @@ header {
       .rows {
         min-height: 2.8rem;
         margin: 0;
+        padding-left: 1rem;
       }
       ul {
         li {
           list-style: none;
-          &::after {
-            padding-left: 0.3rem;
-            padding-right: 0.3rem;
-            content: ">";
-          }
-          &:last-child:after {
-            content: "";
+          &:last-child {
+            a:after {
+              content: "";
+              padding-left: 0.3rem;
+              padding-right: 0.3rem;
+              text-decoration : none;
+            }
           }
           a {
             font-family: "Lato";
             font-size: 1.1rem;
+            &::after {
+              content: ">";
+              padding-left: 0.3rem;
+              padding-right: 0.3rem;
+              text-decoration : none;
+            }
           }
         }
       }
@@ -281,16 +285,30 @@ header {
       min-height: 34.4rem;
       .left {
         min-height: 34.4rem;
-        .rows{
+        .rows {
           min-height: 34.4rem;
-<<<<<<< HEAD
-          .column:first-of-type{
-            .columns{
-              min-height: 34.4rem;
+          .column:first-of-type {
+            padding-left: 2.2rem;
+            img {
+              padding: 0.4rem;
+              border: solid 1px #eee8e3;
             }
           }
-=======
->>>>>>> romain
+          .middle {
+            img {
+              margin-left: auto;
+              margin-right: auto;
+              display: block;
+            }
+          }
+          .column:last-of-type {
+            align-self: flex-start;
+            h2 {
+              font-family: "Lato";
+              font-size: 2rem;
+              font-weight: bold;
+            }
+          }
         }
       }
     }
