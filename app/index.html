@@ -100,8 +100,8 @@
   </header>
   <div class="content">
     <div class="product container">
-      <div class="rows entete">
-        <ul class="rows end-start">
+      <div class="entete">
+        <ul class="rows end-start is-tablet is-tablet-center">
           <li>
             <a href="#">Accueil</a>
           </li>
@@ -113,7 +113,7 @@
           </li>
         </ul>
       </div>
-      <div class="rows product-wrapper">
+      <div class="rows product-wrapper center-center">
         <div class="column left">
           <div class="rows center-center">
             <div class="column">
@@ -171,26 +171,35 @@
         </div>
         <div class="column right is-3 is-offset-1">
           <div class="product__panier">
-            <div class="product__panier-wrapper columns  center-center">
-              <div class="column">
-                <span>69,99 €</span>
-                <span>57,59€</span>
-                <span>TTC</span>
+            <div class="product__panier-wrapper columns">
+              <div class="column product__price">
+                <div class="rows center-center">
+                  <s>69,99€</s>
+                  <span>57,59€</span>
+                  <span>TTC</span>
+                </div>
               </div>
-              <div class="column">
-                <span>Taille</span>
+              <div class="column product__size">
+                <div class="rows center-center">
+                  <span>Taille</span>
+                  <select name="select">
+                    <option value="value1">40</option>
+                    <option value="value2" selected>42</option>
+                    <option value="value3">44</option>
+                  </select>
+                </div>
               </div>
-              <div class="column">
+              <div class="column product__addpanier">
                 <a href="#">Ajouter au panier</a>
               </div>
-              <div class="column ">
+              <div class="column product__livinfo">
                 <div>
                   <img src="images/stockok.png" alt=""/>
                   <span>En Stock</span>
                 </div>
                 <div>
                   <img src="images/liv.png" alt=""/>
-                  <span>Expédition Gratuite sous 24h</span>
+                  <span>Expédition <span>Gratuite</span> sous 24h</span>
                 </div>
               </div>
             </div>
