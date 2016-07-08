@@ -58,7 +58,7 @@
               <i class="fa"></i>
             </div>
             <div class="session column is-4 is-offset-1">
-              <div class="rows center-center">
+              <div class="rows center-center is-tablet is-mobile">
                 <div class="compte column">
                   <img src="images/ico/user.png" alt="user"/>
                   <p>
@@ -77,137 +77,158 @@
         </div>
       </div>
       <div class="menu">
-        <div class="menu-wrapper container">
-          <nav class="rows center-start">
-            <a href="#" class="">
-            <li>Chaussures</li>
-          </a>
-          <a href="#" class="">
-            <li>Vêtements</li>
-          </a>
-          <a href="#" class="">
-            <li>Randonnée</li>
-          </a>
-          <a href="#" class="">
-            <li>Pêche</li>
-          </a>
-          <a href="#" class="">
-            <li><img src="images/ico/map.png" alt="map"/>Carte et itinéraires</li>
-          </a>
-        </nav>
+        <div class="menu-wrapper container nopad">
+          <ul class="rows center-start">
+            <li>
+              <a href="#" class="" onclick="toggleMenu()">Chaussures</a>
+            </li>
+            <li>
+              <a href="#" class="">Vêtements</a>
+            </li>
+            <li>
+              <a href="#" class="">Randonnée</a>
+            </li>
+            <li>
+              <a href="#" class="">Pêche</a>
+            </li>
+            <li><img src="images/ico/map.png" alt="map"/>
+              <a href="#">Carte et itinéraires</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </header>
-  <div class="content">
-    <div class="product container">
-      <div class="rows entete">
-        <ul class="rows end-start">
-          <li>
-            <a href="#">Accueil</a>
-          </li>
-          <li>
-            <a href="#">Niveau 1</a>
-          </li>
-          <li>
-            <a href="#">Nom du produit ici</a>
-          </li>
-        </ul>
-      </div>
-      <div class="rows product-wrapper">
-        <div class="column left">
-          <div class="rows center-center">
-            <div class="column">
-              <img src="images/m1.png" alt=""/>
-              <img src="images/m2.png" alt=""/>
-              <img src="images/m3.png" alt=""/>
-              <img src="images/vue.png" alt=""/>
-              <img src="images/yt.png" alt=""/>
-            </div>
-            <div class="column product__middle is-5">
-              <img src="images/photo.png" alt=""/>
-            </div>
-            <div class="column is-6">
-              <h2>Chaussures de Randonnée Geoxiflux Homme</h2>
-              <div class="product__avis">
-                <span>
-                  Avis de l'Expert
-                </span>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <span>(4)</span>
-                <a>Lire l'avis</a>
-              </div>
-              <div class="product__avis">
-                <span>
-                  Avis de Client
-                </span>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <span>(4)</span>
-                <a>Lire l'avis</a>
-              </div>
-              <p>
-                Ce produit est disponible dans les coloris suivants :
-              </p>
-              <div class="product__color">
-                <img src="images/color_blue.png" alt="blue"/>
-                <img src="images/color_gray.png" alt="gray"/>
-                <img src="images/color_orange.png" alt="orange"/>
-              </div>
-              <div class="product__rs">
-                <img src="images/fb.png" alt="fb"/>
-                <img src="images/tw.png" alt="tw"/>
-                <img src="images/g+.png" alt="g+"/>
-                <img src="images/pin.png" alt="pin"/>
-              </div>
-            </div>
+      <div class="menu-deroulant">
+        <div class="menu-deroulant-wrapper">
+          <div class="entete"></div>
+          <div class="colmuns">
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
           </div>
         </div>
-        <div class="column right is-3 is-offset-1">
-          <div class="product__panier">
-            <div class="product__panier-wrapper columns  center-center">
+      </div>
+    </header>
+    <div class="content">
+      <div class="product container">
+        <div class="entete">
+          <ul class="rows end-start is-tablet is-tablet-center">
+            <li>
+              <a href="#">Accueil</a>
+            </li>
+            <li>
+              <a href="#">Niveau 1</a>
+            </li>
+            <li>
+              <a href="#">Nom du produit ici</a>
+            </li>
+          </ul>
+        </div>
+        <div class="rows product-wrapper center-center">
+          <div class="column left">
+            <div class="rows center-center">
               <div class="column">
-                <span>69,99 €</span>
-                <span>57,59€</span>
-                <span>TTC</span>
+                <img src="images/m1.png" alt=""/>
+                <img src="images/m2.png" alt=""/>
+                <img src="images/m3.png" alt=""/>
+                <img src="images/vue.png" alt=""/>
+                <img src="images/yt.png" alt=""/>
               </div>
-              <div class="column">
-                <span>Taille</span>
+              <div class="column product__middle is-5">
+                <img src="images/photo.png" alt=""/>
               </div>
-              <div class="column">
-                <a href="#">Ajouter au panier</a>
-              </div>
-              <div class="column ">
-                <div>
-                  <img src="images/stockok.png" alt=""/>
-                  <span>En Stock</span>
+              <div class="column is-6">
+                <h2>Chaussures de Randonnée Geoxiflux Homme</h2>
+                <div class="product__avis">
+                  <span>
+                    Avis de l'Expert
+                  </span>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <span>(4)</span>
+                  <a>Lire l'avis</a>
                 </div>
-                <div>
-                  <img src="images/liv.png" alt=""/>
-                  <span>Expédition Gratuite sous 24h</span>
-                </div>                              
+                <div class="product__avis">
+                  <span>
+                    Avis de Client
+                  </span>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <span>(4)</span>
+                  <a>Lire l'avis</a>
+                </div>
+                <p>
+                  Ce produit est disponible dans les coloris suivants :
+                </p>
+                <div class="product__color">
+                  <img src="images/color_blue.png" alt="blue"/>
+                  <img src="images/color_gray.png" alt="gray"/>
+                  <img src="images/color_orange.png" alt="orange"/>
+                </div>
+                <div class="product__rs">
+                  <img src="images/fb.png" alt="fb"/>
+                  <img src="images/tw.png" alt="tw"/>
+                  <img src="images/g+.png" alt="g+"/>
+                  <img src="images/pin.png" alt="pin"/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column right is-3 is-offset-1">
+            <div class="product__panier">
+              <div class="product__panier-wrapper columns">
+                <div class="column product__price">
+                  <div class="rows center-center is-tablet">
+                    <s>69,99€</s>
+                    <span>57,59€</span>
+                    <span>TTC</span>
+                  </div>
+                </div>
+                <div class="column product__size">
+                  <div class="rows center-center is-tablet">
+                    <span>Taille</span>
+                    <select name="select">
+                      <option value="value1">40</option>
+                      <option value="value2" selected>42</option>
+                      <option value="value3">44</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="column product__addpanier">
+                  <a href="#">Ajouter au panier</a>
+                </div>
+                <div class="column product__livinfo">
+                  <div>
+                    <img src="images/stockok.png" alt=""/>
+                    <span>En Stock</span>
+                  </div>
+                  <div>
+                    <img src="images/liv.png" alt=""/>
+                    <span>Expédition
+                      <span>Gratuite</span>
+                      sous 24h</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="column right is-3 is-offset-1"></div>
       </div>
     </div>
-  </div>
-  <!-- build:js scripts/vendor.js -->
-  <!-- bower:js -->
-  <script src="/bower_components/jquery/dist/jquery.js"></script>
-  <!-- endbower -->
-  <!-- endbuild -->
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
 
-  <!-- build:js scripts/main.js -->
-  <script src="scripts/main.js"></script>
-  <!-- endbuild -->
-</body>
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
 </html>
