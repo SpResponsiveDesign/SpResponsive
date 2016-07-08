@@ -8,14 +8,12 @@ $mobile: 768px;
 $tablet: 769px;
 $desktop: 980px;
 $widescreen: 1180px;
-
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
 }
-
 html {
   font-size: 62.5%;
 }
@@ -26,9 +24,9 @@ html {
   @media screen and (max-width: $tablet) {
     padding-left: 2rem;
     padding-right: 2rem;
-    &.nopad{
-      padding-left: 0rem;
-      padding-right: 0rem;
+    &.nopad {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }
@@ -46,6 +44,14 @@ html {
   &.end-start {
     @include align-items(flex-end);
     @include justify-content(flex-start);
+  }
+  &.center-space-around {
+    @include align-items(center);
+    @include justify-content(space-around);
+  }
+  &.star-space-around {
+    @include align-items( flex-star);
+    @include justify-content(space-around);
   }
   &.is-tablet {
     @media screen and (min-width: $tablet) and (max-width: $desktop) {
@@ -258,10 +264,10 @@ header {
           font-size: 1.6rem;
           padding-right: 3.2rem;
           list-style: none;
-          @media screen  and (max-width: $desktop){
+          @media screen and (max-width: $desktop) {
             padding-top: 1.3rem;
             padding-bottom: 1.3rem;
-            padding-right: 0rem;
+            padding-right: 0;
           }
           a {
             color: #696969;
@@ -278,11 +284,8 @@ header {
         li:nth-last-of-type(1) {
           margin-left: auto;
           background: $color_darkgray;
-          padding-bottom: 1.7rem;
-          padding-top: 1.7rem;
-          padding-left: 1.4rem;
-          padding-right: 3.2rem;
-          a{
+          padding: 1.7rem 3.2rem 1.7rem 1.4rem;
+          a {
             color: $color_orange;
           }
           img {
@@ -306,7 +309,7 @@ header {
       display: none;
       transition: all 1s ease;
       @media screen and (min-width: $desktop) {
-        &.open{
+        &.open {
           display: block;
         }
       }
@@ -528,6 +531,141 @@ header {
                 }
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+footer {
+  .reassurance {
+    background: #393939;
+    text-align: center;
+    .rows {
+      padding-top: 1.7rem;
+      padding-bottom: 1.7rem;
+      p {
+        font-family: "Lato";
+        font-size: 1.4rem;
+        color: white;
+      }
+    }
+  }
+  .paiement {
+    .container{
+      padding-top: 1.2rem;
+      padding-bottom: 1.2rem;
+      font-family: "Lato";
+      span {
+        font-size: 1.6rem;
+      }
+      a {
+        font-size: 1.6rem;
+        color: #333231;
+        background: #e5e5e5;
+        padding: 1.1rem 2.5rem;
+        text-decoration: none;
+      }
+    }
+
+  }
+  .newsletter {
+    background: #558540;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    .container {
+      font-family: "Lato";
+      label,
+      span {
+        font-size: 1.6rem;
+        color: white;
+      }
+      div > p {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        color: white;
+      }
+      input[type="text"] {
+        width: 200px;
+        height: 20px;
+        padding-right: 50px;
+      }
+      input[type="submit"] {
+        text-transform: uppercase;
+        padding-bottom: 2.3rem;
+        padding-top: 0.4rem;
+        font-size: 1.4rem;
+        margin-left: -50px;
+        height: 2.6rem;
+        width: 11rem;
+        background: #333231;
+        color: white;
+        border: 0;
+        -webkit-appearance: none;
+      }
+    }
+  }
+  .lien{
+    .container{
+      .rows{
+          font-family: "Lato";
+          ul{
+            list-style: none;
+            li{
+              padding-bottom: 0.5rem;
+            }
+          }
+          li>a{
+            font-size: 1.2rem;
+            color: #62605e;
+          }
+        h3{
+          font-weight: bold;
+          font-size: 1.6rem;
+          color: #333231;
+        }
+        div:nth-child(1){
+          p{
+            font-weight: bold;
+            line-height: 1.6rem;
+            font-size: 1.2rem;
+            color: #62605e;
+          }
+          a{
+            font-size: 1.2rem;
+            color: #62605e;
+          }
+        }
+        div:nth-child(5){
+          p{
+            font-weight: bold;
+            line-height: 1.6rem;
+            font-size: 1.2rem;
+            color: #62605e;
+          }
+          img{
+            padding-right: 1rem;
+          }
+          a{
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.6rem;
+            padding: 1rem 1rem;
+            color: $color_orange;
+            background: #393939;
+          }
+        }
+        div:nth-child(4){
+          text-align: center;
+        }
+        div:nth-child(2){
+          h3{
+            text-align: center;
+          }
+        }
+        div:nth-child(3){
+          h3{
+            text-align: center;
           }
         }
       }
