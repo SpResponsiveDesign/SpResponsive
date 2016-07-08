@@ -1,1 +1,3 @@
-console.log('\'Allo \'Allo!');
+function toggleMenu() {
+  $(".menu-deroulant-wrapper").toggleClass("open")
+}

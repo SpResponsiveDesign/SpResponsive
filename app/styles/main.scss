@@ -1,31 +1,536 @@
 // bower:scss
-// endbower
-
-body {
-  background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
-}
-
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-}
+@import "bower_components/font-awesome/scss/font-awesome.scss";
+@import "bower_components/bourbon/app/assets/stylesheets/_bourbon.scss"; // endbower
+$color_darkgray: #393939;
+$color_orange: #f19319;
+$color_green: #558540;
+$mobile: 768px;
+$tablet: 769px;
+$desktop: 980px;
+$widescreen: 1180px;
 
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+.container {
+  max-width: 1044px;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (max-width: $tablet) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    &.nopad{
+      padding-left: 0rem;
+      padding-right: 0rem;
+    }
+  }
+}
+//flexbox
+.rows {
+  @include display(flex);
+  &.center-center {
+    @include align-items(center);
+    @include justify-content(center);
+  }
+  &.center-start {
+    @include align-items(center);
+    @include justify-content(flex-start);
+  }
+  &.end-start {
+    @include align-items(flex-end);
+    @include justify-content(flex-start);
+  }
+  &.is-tablet {
+    @media screen and (min-width: $tablet) and (max-width: $desktop) {
+      flex-direction: row;
+    }
+  }
+  @media screen and (max-width: $desktop) {
+    &.is-tablet-center {
+      @include align-items(center);
+      @include justify-content(center);
+    }
+  }
+  &.is-mobile {
+    @media screen and (max-width: $mobile) {
+      flex-direction: row;
+    }
+  }
+  @media screen and (min-width: $tablet) and (max-width: $desktop) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: $mobile) {
+    flex-direction: column;
+  }
+  .column {
+    @include flex(1);
+    @media screen and (min-width: $desktop) {
+      &.is-2 {
+        @include flex(none);
+        width: 16.66667%;
+      }
+      &.is-3 {
+        @include flex(none);
+        width: 25%;
+      }
+      &.is-4 {
+        @include flex(none);
+        width: 33.33333%;
+      }
+      &.is-5 {
+        @include flex(none);
+        width: 41.66667%;
+      }
+      &.is-6 {
+        @include flex(none);
+        width: 50%;
+      }
+      &.is-7 {
+        @include flex(none);
+        width: 58.33333%;
+      }
+      &.is-8 {
+        @include flex(none);
+        width: 66.66667%;
+      }
+      &.is-10 {
+        @include flex(none);
+        width: 83.33333%;
+      }
+      &.is-offset-1 {
+        margin-left: 8.33333%;
+      }
+    }
+  }
+}
+.columns {
+  @include display(flex);
+  @include flex-direction(column);
+  &.center-center {
+    @include align-items(center);
+    @include justify-content(center);
+  }
+  &.center-start {
+    @include align-items(center);
+    @include justify-content(flex-start);
+  }
+  &.end-start {
+    @include align-items(flex-end);
+    @include justify-content(flex-start);
+  }
+  .column {
+    @include flex(1);
+    &.is-3 {
+      @include flex(none);
+      width: 25%;
+    }
+    &.is-4 {
+      @include flex(none);
+      width: 33.33333%;
+    }
+    &.is-10 {
+      @include flex(none);
+      width: 83.33333%;
+    }
+    &.is-offset-1 {
+      margin-left: 8.33333%;
+    }
+  }
+}
+header {
+  //heading
+  .contactheading {
+    background: $color_darkgray;
+    min-height: 3.3rem;
+    .contactheading-wrapper {
+      color: white;
+      font-family: 'Lato';
+      .rows {
+        min-height: 3.3rem;
+      }
+      img,
+      p {
+        display: inline-block;
+      }
+      span {
+        color: $color_orange;
+      }
+      p {
+        padding-left: 1.4rem;
+        margin: 0;
+      }
+      .left {
+        img {
+          vertical-align: middle;
+        }
+        p {
+          font-size: 1.2rem;
+        }
+      }
+      .right {
+        img {
+          vertical-align: middle;
+        }
+        p {
+          font-size: 1.4rem;
+        }
+      }
+    }
+    @media screen and (max-width: $desktop) {
+      display: none;
+    }
+  }
+  .headermiddle {
+    background: white;
+    min-height: 9.2rem;
+    .headermiddle-wrapper {
+      .rows {
+        min-height: 9.2rem;
+      }
+      .logo {}
+      .search {
+        input {
+          margin-left: 3.1rem;
+          display: inline-block;
+          min-width: 22rem;
+          box-shadow: none;
+          border: solid 1px #eee8e3;
+          border-radius: 0;
+          font-family: 'Lato';
+          padding: 1.2rem;
+          &::placeholder {
+            font-style: italic;
+          }
+        }
+        .fa {
+          height: 25px;
+          width: 25px;
+          display: inline-block;
+          right: 36px;
+          top: 9px;
+          position: relative;
+          background-image: url("../images/ico/Search.png");
+        }
+      }
+    }
+  }
+  .session {
+    .rows {
+      text-align: center;
+      .column {
+        img,
+        p {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        p {
+          padding-left: 1.8rem;
+          font-family: "Lato";
+          font-size: 1.6rem;
+        }
+      }
+    }
+    .compte {
+      border-right: 1px solid #eee8e3;
+    }
+  }
+  .menu {
+    background: #f7f7f7;
+    min-height: 5.3rem;
+    box-shadow: inset 0 0.1rem 0 0 #eee8e3;
+    .menu-wrapper {
+      .rows {
+        min-height: 5.3rem;
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        li {
+          text-transform: uppercase;
+          font-family: "Lato";
+          font-weight: bold;
+          font-size: 1.6rem;
+          padding-right: 3.2rem;
+          list-style: none;
+          @media screen  and (max-width: $desktop){
+            padding-top: 1.3rem;
+            padding-bottom: 1.3rem;
+            padding-right: 0rem;
+          }
+          a {
+            color: #696969;
+            text-decoration: none;
+          }
+        }
+        li:first-of-type {
+          a {
+            border-bottom: 0.5rem solid $color_green;
+            padding-bottom: 1.6rem;
+            padding-top: 2.2rem;
+          }
+        }
+        li:nth-last-of-type(1) {
+          margin-left: auto;
+          background: $color_darkgray;
+          padding-bottom: 1.7rem;
+          padding-top: 1.7rem;
+          padding-left: 1.4rem;
+          padding-right: 3.2rem;
+          a{
+            color: $color_orange;
+          }
+          img {
+            padding-right: 0.9rem;
+          }
+          img,
+          li {
+            display: inline-block;
+            vertical-align: middle;
+          }
+          @media screen and (max-width: $desktop) {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+  .menu-deroulant {
+    .menu-deroulant-wrapper {
+      min-height: 32.4rem;
+      display: none;
+      transition: all 1s ease;
+      @media screen and (min-width: $desktop) {
+        &.open{
+          display: block;
+        }
+      }
+    }
+  }
+}
+//content
+.content {
+  background: #e8ebeb;
+  padding-top: 2.7rem;
+  .product {
+    background: #ffffff;
+    min-height: 37.2rem;
+    .entete {
+      .rows {
+        min-height: 2.8rem;
+        margin: 0;
+        padding-left: 1rem;
+      }
+      ul {
+        li {
+          list-style: none;
+          &:last-child {
+            a:after {
+              content: "";
+              padding-left: 0.3rem;
+              padding-right: 0.3rem;
+              text-decoration: none;
+            }
+          }
+          a {
+            font-family: "Lato";
+            font-size: 1.1rem;
+            &::after {
+              content: ">";
+              padding-left: 0.3rem;
+              padding-right: 0.3rem;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+    .product-wrapper {
+      min-height: 34.4rem;
+      .left {
+        min-height: 34.4rem;
+        .rows {
+          min-height: 34.4rem;
+          .column:first-of-type {
+            padding-left: 2.2rem;
+            img {
+              padding: 0.4rem;
+              border: solid 1px #eee8e3;
+            }
+          }
+          .product__middle {
+            img {
+              margin-left: auto;
+              margin-right: auto;
+              display: block;
+            }
+          }
+          .column:last-of-type {
+            align-self: flex-start;
+            h2 {
+              font-family: "Lato";
+              font-size: 2rem;
+              font-weight: bold;
+              margin: 2rem 0 0;
+            }
+            .product__avis {
+              &:first-of-type {
+                padding-top: 3.2rem;
+                padding-bottom: 2.2rem;
+              }
+              &:last-of-type {
+                padding-bottom: 3.9rem;
+              }
+              span:first-of-type {
+                font-family: "Lato";
+                font-size: 1.4rem;
+                font-weight: bold;
+              }
+              span:last-of-type {
+                font-size: 1.2rem;
+                padding-right: 1rem;
+              }
+              a {
+                cursor: pointer;
+                font-size: 1.2rem;
+                color: $color_green;
+                text-decoration: underline;
+              }
+              i:first-of-type {
+                padding-left: 1.95rem;
+              }
+              i {
+                color: #f19319;
+              }
+              i:last-of-type {
+                color: #eee8e3;
+              }
+            }
+            p {
+              font-family: "Lato";
+              font-size: 1.2rem;
+              color: #62605e;
+              margin-top: 3rem;
+            }
+            .product__color {
+              img {
+                padding-right: 1.4rem;
+              }
+            }
+            .product__rs {
+              margin-top: 1.9rem;
+              padding-top: 1.1rem;
+              border-top: 1px solid #eee8e3;
+              img {
+                padding-left: 0.7rem;
+              }
+            }
+          }
+        }
+      }
+      .right {
+        .product__panier {
+          border: 1px solid #e8ebeb;
+          min-height: 31.5rem;
+          min-width: 24.1rem;
+          margin-right: 2.1rem;
+          align-self: flex-start;
+          .product__panier-wrapper {
+            font-family: "Lato";
+            padding: 1.4rem;
+            min-height: 31.5rem;
+            .product__price {
+              align-self: flex-end;
+              .rows {
+                min-height: 6.5rem;
+                border-bottom: 1px solid #eee8e3;
+              }
+              s {
+                vertical-align: sub;
+                font-size: 1.2rem;
+              }
+              span:nth-of-type(1) {
+                padding-left: 7.4rem;
+                font-weight: bold;
+                font-size: 2.4rem;
+                color: $color_green;
+                vertical-align: middle;
+              }
+              span:nth-of-type(2) {
+                font-weight: bold;
+                font-size: 1.2rem;
+                color: $color_green;
+                vertical-align: sub;
+              }
+            }
+            .product__size {
+              align-self: flex-end;
+              font-family: "Lato";
+              border-bottom: 1px solid #eee8e3;
+              span {
+                font-size: 1.6rem;
+              }
+              select {
+                font-size: 1.4rem;
+                padding: 0.8rem;
+                margin-left: 12rem;
+              }
+            }
+            .product__addpanier {
+              font-family: "Lato";
+              margin-top: 1.9rem;
+              margin-bottom: 1.9rem;
+              border-bottom: 1px solid #eee8e3;
+              a {
+                display: inherit;
+                font-size: 1.6rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: #fefefe;
+                padding: 1.7rem 2.2rem;
+                background: #558540;
+                border-radius: 2px;
+              }
+            }
+            .product__livinfo {
+              font-family: "Lato";
+              div:first-of-type {
+                img {
+                  vertical-align: middle;
+                }
+                span {
+                  padding-left: 2rem;
+                  font-size: 1.4rem;
+                  font-weight: bold;
+                  color: #03733d;
+                }
+              }
+              div:last-of-type {
+                img {
+                  vertical-align: sub;
+                }
+                span {
+                  padding-left: 1.5rem;
+                  font-size: 1.2rem;
+                  color: #62605e;
+                  span {
+                    padding-left: 0;
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                    color: #03733d;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

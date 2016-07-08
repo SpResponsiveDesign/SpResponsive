@@ -3,10 +3,23 @@
   "private": true,
   "dependencies": {
     "jquery": "~2.1.1",
+<<<<<<< HEAD
     "modernizr": "~2.8.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.5.3"
+=======
+    "modernizr": "~2.8.1",
+    "font-awesome": "fontawesome#^4.6.3",
+    "lato": "^0.3.0",
+    "normalize-css": "^4.2.0",
+    "bourbon": "^4.2.7"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "bulma": "^0.1.0"
+>>>>>>> develop
   }
 }
